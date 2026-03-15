@@ -1,0 +1,21 @@
+[
+  {
+    "degree": "M.Sc. in Computer Science",
+    "institution": "Technion \u2013 Israel Institute of Technology",
+    "period": "2021 \u2013 2024",
+    "details": {
+      "thesisTitle": "Thesis title placeholder",
+      "thesisGrade": 96,
+      "advisor": "Prof. Yaniv Romano"
+    }
+  },
+  {
+    "degree": "B.Sc. in Computer Science",
+    "institution": "Technion \u2013 Israel Institute of Technology",
+    "period": "2017 \u2013 2021",
+    "details": {
+      "gpa": 88,
+      "scholarship": "PEF Excellence Scholarship"
+    }
+  }
+]

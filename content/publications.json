@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Testing For Distribution Shifts with Conditional Conformal Test Martingales",
+    "authors": ["S. Shaer", "Yarin Bar", "Y. Romano"],
+    "venue": "arXiv",
+    "year": 2025,
+    "arxiv": "2602.13848",
+    "abstract": "We propose a sequential test for detecting arbitrary distribution shifts that allows conformal test martingales (CTMs) to work under a fixed, reference-conditional setting. Existing CTM detectors construct test martingales by continually growing a reference set with each incoming sample, using it to assess how atypical the new sample is relative to past observations. While this design yields anytime-valid type-I error control, it suffers from test-time contamination: after a change, post-shift observations enter the reference set and dilute the evidence for distribution shift, increasing detection delay and reducing power. In contrast, our method avoids contamination by design by comparing each new sample to a fixed null reference dataset. Our main technical contribution is a robust martingale construction that remains valid conditional on the null reference data, achieved by explicitly accounting for the estimation error in the reference distribution induced by the finite reference set. This yields anytime-valid type-I error control together with guarantees of asymptotic power one and bounded expected detection delay. Empirically, our method detects shifts faster than standard CTMs, providing a powerful and reliable distribution-shift detector.",
+    "bibtex": "@article{shaer2025testing,\n  title={Testing For Distribution Shifts with Conditional Conformal Test Martingales},\n  author={Shaer, S. and Bar, Yarin and Romano, Yaniv},\n  journal={arXiv preprint arXiv:2602.13848},\n  year={2025}\n}"
+  },
+  {
+    "title": "Protected Test-Time Adaptation via Online Entropy Matching",
+    "authors": ["Yarin Bar", "S. Shaer", "Y. Romano"],
+    "venue": "NeurIPS",
+    "year": 2024,
+    "arxiv": "2408.07511",
+    "abstract": "We present a novel approach for test-time adaptation via online self-training, consisting of two components. First, we introduce a statistical framework that detects distribution shifts in the classifier's entropy values obtained on a stream of unlabeled samples. Second, we devise an online adaptation mechanism that utilizes the evidence of distribution shifts captured by the detection tool to dynamically update the classifier's parameters. The resulting adaptation process drives the distribution of test entropy values obtained from the self-trained classifier to match those of the source domain, building invariance to distribution shifts. This approach departs from the conventional self-training method, which focuses on minimizing the classifier's entropy. Our approach combines concepts in betting martingales and online learning to form a detection tool capable of quickly reacting to distribution shifts. We then reveal a tight relation between our adaptation scheme and optimal transport, which forms the basis of our novel self-supervised loss. Experimental results demonstrate that our approach improves test-time accuracy under distribution shifts while maintaining accuracy and calibration in their absence, outperforming leading entropy minimization methods across various scenarios.",
+    "bibtex": "@inproceedings{bar2024protected,\n  title={Protected Test-Time Adaptation via Online Entropy Matching},\n  author={Bar, Yarin and Shaer, S. and Romano, Yaniv},\n  booktitle={Advances in Neural Information Processing Systems},\n  year={2024}\n}"
+  },
+  {
+    "title": "Towards Weakly-Supervised Text Spotting using a Multi-Task Transformer",
+    "authors": ["Y. Kittenplon", "I. Lavi", "S. Fogel", "Yarin Bar", "R. Manmatha", "P. Perona"],
+    "venue": "CVPR",
+    "year": 2022,
+    "arxiv": "2202.05508",
+    "abstract": "Text spotting end-to-end methods have recently gained attention in the literature due to the benefits of jointly optimizing the text detection and recognition components. Existing methods usually have a distinct separation between the detection and recognition branches, requiring exact annotations for the two tasks. We introduce TextTranSpotter (TTS), a transformer-based approach for text spotting and the first text spotting framework which may be trained with both fully- and weakly-supervised settings. By learning a single latent representation per word detection, and using a novel loss function based on the Hungarian loss, our method alleviates the need for expensive localization annotations. Trained with only text transcription annotations on real data, our weakly-supervised method achieves competitive performance with previous state-of-the-art fully-supervised methods. When trained in a fully-supervised manner, TextTranSpotter shows state-of-the-art results on multiple benchmarks.",
+    "bibtex": "@inproceedings{kittenplon2022towards,\n  title={Towards Weakly-Supervised Text Spotting using a Multi-Task Transformer},\n  author={Kittenplon, Y. and Lavi, I. and Fogel, S. and Bar, Yarin and Manmatha, R. and Perona, P.},\n  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},\n  year={2022}\n}"
+  }
+]

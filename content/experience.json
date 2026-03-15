@@ -1,0 +1,61 @@
+[
+  {
+    "title": "Built kollit.ai",
+    "role": "Founder & Developer",
+    "organization": "kollit.ai",
+    "period": "2024",
+    "description": "A prediction-based trading strategy calculator for investments. Using statistics, machine learning and game theory. Designed, developed and launched.",
+    "tags": ["ML", "Statistics", "Game Theory", "Product"],
+    "type": "project"
+  },
+  {
+    "title": "Head of Algorithm Development",
+    "organization": "cathAlert",
+    "period": "2023 \u2013 2025",
+    "description": "Computer vision, large models and algorithm development for medical imagery.",
+    "tags": ["Computer Vision", "Medical Imaging", "Leadership"],
+    "type": "work"
+  },
+  {
+    "title": "Developed a News Comparison Website",
+    "role": "Developer",
+    "organization": "scala.news",
+    "period": "2021 \u2013 2022",
+    "description": "Using NLP & Graph Theory, planned, developed, and launched a news website that lets users compare news coverages from around the world.",
+    "tags": ["NLP", "Graph Theory", "Full-Stack"],
+    "type": "project"
+  },
+  {
+    "title": "Applied Scientist Student",
+    "organization": "Amazon AWS \u2013 AI Research",
+    "period": "2021 \u2013 2022",
+    "description": "Developing computer vision and data science algorithms using neural networks.",
+    "tags": ["Computer Vision", "Data Science", "Neural Networks"],
+    "type": "work"
+  },
+  {
+    "title": "Neural Network Research Project",
+    "organization": "Technion",
+    "period": "2020",
+    "description": "Participated in a research project on time-frequency joint attention neural network architectures.",
+    "tags": ["Research", "Neural Networks"],
+    "type": "project"
+  },
+  {
+    "title": "Research Internship",
+    "organization": "National Tsing Hua University, Taiwan",
+    "period": "2019 \u2013 2020",
+    "description": "Developed an algorithm that overcomes adversarial attacks with neural networks.",
+    "tags": ["Adversarial ML", "Research"],
+    "type": "work"
+  },
+  {
+    "title": "Algorithmic Trading Framework",
+    "role": "Developer",
+    "organization": "Personal Project",
+    "period": "2019",
+    "description": "Designed and built an algorithmic trading framework for crypto currencies.",
+    "tags": ["Python", "Finance", "Algorithms"],
+    "type": "project"
+  }
+]

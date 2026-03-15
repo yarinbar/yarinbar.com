@@ -1,0 +1,23 @@
+[
+  {
+    "name": "kollit.ai",
+    "description": "A prediction-based trading strategy calculator for investments using statistics, machine learning and game theory.",
+    "url": "https://kollit.ai",
+    "tags": ["Machine Learning", "Statistics", "Game Theory", "Python"],
+    "status": "live"
+  },
+  {
+    "name": "News Coverage Comparison",
+    "description": "A news website that lets users compare news coverages from around the world, built with NLP and Graph Theory.",
+    "url": null,
+    "tags": ["NLP", "Graph Theory", "Full-Stack", "Python"],
+    "status": "archived"
+  },
+  {
+    "name": "Crypto Trading Framework",
+    "description": "An algorithmic trading framework for crypto currencies with backtesting and strategy optimization.",
+    "github": "https://github.com/yarinbar",
+    "tags": ["Python", "Finance", "Algorithms"],
+    "status": "archived"
+  }
+]

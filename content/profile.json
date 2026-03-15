@@ -1,0 +1,14 @@
+{
+  "name": "Yarin Bar",
+  "tagline": "Machine Learning Researcher at Technion. NeurIPS, CVPR.",
+  "email": "yarinbar1@gmail.com",
+  "location": "Haifa, Israel",
+  "headshot": "/images/profile/headshot-sq2.jpg",
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/yarin-bar-4a767019b/",
+    "scholar": "https://scholar.google.com/citations?user=FOxY39YAAAAJ&hl=en",
+    "github": "https://github.com/yarinbar"
+  },
+  "cvPath": "/cv.pdf",
+  "highlights": ["NeurIPS '24", "CVPR '22", "Amazon AWS"]
+}
