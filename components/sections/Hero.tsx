@@ -110,7 +110,7 @@ export default function Hero({ profile }: HeroProps) {
             }}
             className="font-body text-[11px] font-medium uppercase tracking-[3px] text-[#60a5fa]"
           >
-            AI · LLMs · Computer Vision · Test Martingale
+            LLMs · Computer Vision · Research · Entrepreneur
           </motion.p>
 
           <motion.h1

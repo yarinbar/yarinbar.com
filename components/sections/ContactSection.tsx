@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { fadeInUp } from "@/lib/motion";
 import type { Profile } from "@/types/content";
@@ -24,7 +25,19 @@ const socialLinks = [
   },
 ];
 
+function useObfuscatedEmail() {
+  const [decoded, setDecoded] = useState<string | null>(null);
+  useEffect(() => {
+    // Assembled client-side to prevent scraper harvesting from static HTML
+    const parts = ["yarinbar1", "gmail", "com"];
+    setDecoded(`${parts[0]}@${parts[1]}.${parts[2]}`);
+  }, []);
+  return decoded;
+}
+
 export default function ContactSection({ profile }: ContactSectionProps) {
+  const email = useObfuscatedEmail();
+
   const linkHref = (key: string) => {
     const map: Record<string, string> = {
       linkedin: profile.links.linkedin,
@@ -60,12 +73,12 @@ export default function ContactSection({ profile }: ContactSectionProps) {
         </motion.h2>
 
         <motion.a
-          href={`mailto:${profile.email}`}
+          href={email ? `mailto:${email}` : "#"}
           variants={fadeInUp}
           transition={{ duration: 0.4 }}
           className="font-body text-[14px] text-[#a8a29e] transition-colors hover:text-[#fafaf9]"
         >
-          {profile.email}
+          {email ?? "Loading..."}
         </motion.a>
 
         {/* Social icons */}
@@ -98,7 +111,7 @@ export default function ContactSection({ profile }: ContactSectionProps) {
 
         {/* CV download button */}
         <motion.a
-          href={`mailto:${profile.email}?subject=CV%20Request&body=Hi%20Yarin%2C%0AI%20would%20like%20to%20request%20your%20CV.`}
+          href={email ? `mailto:${email}?subject=CV%20Request&body=Hi%20Yarin%2C%0AI%20would%20like%20to%20request%20your%20CV.` : "#"}
           variants={fadeInUp}
           transition={{ duration: 0.4 }}
           className="mt-2 inline-flex items-center gap-2 rounded-lg bg-[#2563eb] px-5 py-2.5 font-body text-[13px] font-semibold text-white transition-colors hover:bg-[#1d4ed8]"

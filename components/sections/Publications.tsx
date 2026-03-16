@@ -17,11 +17,9 @@ const venueColors: Record<string, { bg: string; text: string }> = {
 function PublicationEntry({
   pub,
   index,
-  isFirst,
 }: {
   pub: Publication;
   index: number;
-  isFirst: boolean;
 }) {
   const [expanded, setExpanded] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -42,9 +40,7 @@ function PublicationEntry({
     <motion.article
       variants={fadeInUp}
       transition={{ duration: 0.4 }}
-      className={`flex flex-col gap-3 rounded-[14px] border border-[var(--color-border)] bg-[var(--color-bg-secondary)] transition-colors duration-200 hover:bg-[var(--color-bg-tertiary)] md:flex-row md:items-start md:gap-5 ${
-        isFirst ? "p-6" : "p-4 md:p-5"
-      }`}
+      className="flex flex-col gap-3 rounded-[14px] border border-[var(--color-border)] bg-[var(--color-bg-secondary)] p-4 transition-colors duration-200 hover:bg-[var(--color-bg-tertiary)] md:flex-row md:items-start md:gap-5 md:p-5"
     >
       {/* Venue badge */}
       <div className="shrink-0">
@@ -58,9 +54,7 @@ function PublicationEntry({
       {/* Content */}
       <div className="min-w-0 flex-1">
         <h3
-          className={`font-body font-semibold leading-snug text-[var(--color-text-primary)] ${
-            isFirst ? "text-[17px]" : "text-[15px]"
-          }`}
+          className="font-body text-[15px] font-semibold leading-snug text-[var(--color-text-primary)]"
         >
           {pub.title}
         </h3>
@@ -232,7 +226,7 @@ export default function Publications({ publications }: PublicationsProps) {
           className="flex flex-col gap-4"
         >
           {publications.map((pub, i) => (
-            <PublicationEntry key={i} pub={pub} index={i} isFirst={i === 0} />
+            <PublicationEntry key={i} pub={pub} index={i} />
           ))}
         </motion.div>
       </div>
