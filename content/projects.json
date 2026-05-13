@@ -1,10 +1,10 @@
 [
   {
     "name": "kollit.ai",
-    "description": "A prediction-based trading strategy calculator for investments using statistics, machine learning and game theory.",
-    "url": "https://kollit.ai",
+    "description": "A prediction-based trading strategy calculator for investments using statistics, machine learning and game theory. Archived; demo available upon request.",
+    "url": null,
     "tags": ["Machine Learning", "Statistics", "Game Theory", "Python"],
-    "status": "live"
+    "status": "archived"
   },
   {
     "name": "News Coverage Comparison",
