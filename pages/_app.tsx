@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Yarin Bar — ML Researcher</title>
         <meta
           name="description"
-          content="Machine Learning Researcher at Technion. Publications at NeurIPS and CVPR. Shipped products: kollit.ai, cathAlert."
+          content="Machine Learning Researcher at Technion. Publications at ICML, NeurIPS, and CVPR. Shipped products: kollit.ai, cathAlert."
         />
         <link rel="canonical" href="https://yarinbar.com" />
 
@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:title" content="Yarin Bar — ML Researcher" />
         <meta
           property="og:description"
-          content="Machine Learning Researcher at Technion. Publications at NeurIPS and CVPR. Shipped products: kollit.ai, cathAlert."
+          content="Machine Learning Researcher at Technion. Publications at ICML, NeurIPS, and CVPR. Shipped products: kollit.ai, cathAlert."
         />
         <meta
           property="og:image"
@@ -50,7 +50,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:title" content="Yarin Bar — ML Researcher" />
         <meta
           name="twitter:description"
-          content="Machine Learning Researcher at Technion. Publications at NeurIPS and CVPR."
+          content="Machine Learning Researcher at Technion. Publications at ICML, NeurIPS, and CVPR."
         />
         <meta
           name="twitter:image"

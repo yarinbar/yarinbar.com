@@ -9,10 +9,14 @@ interface PublicationsProps {
 }
 
 const venueColors: Record<string, { bg: string; text: string }> = {
+  ICML: { bg: "bg-[#0f766e]", text: "text-white" },
   NeurIPS: { bg: "bg-[#dc2626]", text: "text-white" },
   CVPR: { bg: "bg-[#2563eb]", text: "text-white" },
   arXiv: { bg: "bg-amber-500", text: "text-white" },
 };
+
+const formatVenueLabel = (pub: Publication) =>
+  `${pub.venue} ${String(pub.year).slice(-2)}`;
 
 function PublicationEntry({
   pub,
@@ -47,7 +51,7 @@ function PublicationEntry({
         <span
           className={`inline-block rounded-md px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider ${colors.bg} ${colors.text}`}
         >
-          {pub.venue}
+          {formatVenueLabel(pub)}
         </span>
       </div>
 
