@@ -43,16 +43,35 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up kubectl
-        uses: azure/setup-kubectl@v4
-
-      - name: Configure kubeconfig
+      - name: Configure SSH
+        env:
+          DROPLET_HOST: ${{ secrets.DROPLET_HOST }}
+          DROPLET_SSH_KEY: ${{ secrets.DROPLET_SSH_KEY }}
         run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBECONFIG }}" | base64 -d > $HOME/.kube/config
+          mkdir -p ~/.ssh
+          printf '%s\n' "$DROPLET_SSH_KEY" > ~/.ssh/droplet_key
+          chmod 600 ~/.ssh/droplet_key
+          ssh-keyscan -H "$DROPLET_HOST" >> ~/.ssh/known_hosts
 
-      - name: Deploy to K8s
+      - name: Restart droplet service
+        env:
+          DROPLET_HOST: ${{ secrets.DROPLET_HOST }}
+          DROPLET_USER: ${{ secrets.DROPLET_USER }}
         run: |
-          kubectl apply -f k8s/
-          kubectl set image deployment/yarinbar-website website=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }} -n yarinbar
-          kubectl rollout status deployment/yarinbar-website -n yarinbar --timeout=120s
+          ssh -i ~/.ssh/droplet_key "$DROPLET_USER@$DROPLET_HOST" <<'EOF'
+          set -euo pipefail
+          cd /opt/sites/dad-website
+          docker compose pull yarinbar-website
+          docker compose up -d yarinbar-website caddy
+          for i in $(seq 1 30); do
+            status=$(docker inspect --format='{{.State.Health.Status}}' yarinbar-website 2>/dev/null || true)
+            if [ "$status" = "healthy" ]; then
+              docker compose ps yarinbar-website
+              exit 0
+            fi
+            sleep 2
+          done
+          docker compose ps yarinbar-website
+          docker compose logs --tail=100 yarinbar-website
+          exit 1
+          EOF
