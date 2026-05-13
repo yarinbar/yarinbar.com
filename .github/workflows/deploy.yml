@@ -65,14 +65,9 @@ jobs:
           docker compose pull yarinbar-website
           docker compose up -d yarinbar-website caddy
           for i in $(seq 1 30); do
-            status=$(docker inspect --format='{{.State.Health.Status}}' yarinbar-website 2>/dev/null || true)
-            if [ "$status" = "healthy" ]; then
-              docker compose ps yarinbar-website || true
-              exit 0
-            fi
+            docker inspect --format='{{.State.Health.Status}}' yarinbar-website 2>/dev/null | grep -qx healthy && break
             sleep 2
           done
-          docker compose ps yarinbar-website
-          docker compose logs --tail=100 yarinbar-website
-          exit 1
+          docker compose ps yarinbar-website || true
+          docker inspect --format='{{.State.Health.Status}}' yarinbar-website 2>/dev/null | grep -qx healthy
           EOF
