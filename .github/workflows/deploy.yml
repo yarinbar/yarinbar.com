@@ -49,7 +49,8 @@ jobs:
           DROPLET_SSH_KEY: ${{ secrets.DROPLET_SSH_KEY }}
         run: |
           mkdir -p ~/.ssh
-          printf '%s\n' "$DROPLET_SSH_KEY" > ~/.ssh/droplet_key
+          printf '%s' "$DROPLET_SSH_KEY" | sed 's/\\n/\n/g' > ~/.ssh/droplet_key
+          printf '\n' >> ~/.ssh/droplet_key
           chmod 600 ~/.ssh/droplet_key
           ssh-keyscan -H "$DROPLET_HOST" >> ~/.ssh/known_hosts
 
