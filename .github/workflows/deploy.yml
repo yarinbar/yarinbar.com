@@ -67,7 +67,7 @@ jobs:
           for i in $(seq 1 30); do
             status=$(docker inspect --format='{{.State.Health.Status}}' yarinbar-website 2>/dev/null || true)
             if [ "$status" = "healthy" ]; then
-              docker compose ps yarinbar-website
+              docker compose ps yarinbar-website || true
               exit 0
             fi
             sleep 2
